@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.elkarte.net/site/package-info">
+<modification xmlns="http://www.elkarte.net/site/package-info" xmlns:elk="http://www.elkarte.net/">
+	<id>ElkArte:Topic_Solved</id>
+	<name>Topic Solved</name>
+	<version>1.0</version>
+	<type>modification</type>
+	<license><![CDATA[
+/**
+ * SolveTopic
+ *
+ * @license BSD http://opensource.org/licenses/BSD-3-Clause
+ *
+ * @version 1.0
+ */
+]]></license>
+	<!-- Source files -->
+
+
+	<file name="$sourcedir/MessageIndex.php"><!-- Be sure to get the topic data, to be able to display whether something is solved or not. -->
+		<operation>
+			<search position="before"><![CDATA[mf.smileys_enabled AS first_smileys]]></search>
+			<add><![CDATA[, t.solved]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[// Begin 'printing' the message index for current board.]]></search>
+			<add><![CDATA[// Is this board solvable?
+		$context['board_solve'] = !empty($modSettings['topicsolved_board_' . $board]);
+		if (!empty($modSettings['topicsolved_highlight']) && !empty($modSettings['topicsolved_highlight_col1']) && !empty($modSettings['topicsolved_highlight_col2']))
+		{
+			if (empty($context['html_headers']))
+				$context['html_headers'] = '';
+			$context['html_headers'] .= '<style type="text/css">/* Topic solved */ .solvedbg { background:' . $modSettings['topicsolved_highlight_col1'] . '; } .solvedbg2 { background:' . $modSettings['topicsolved_highlight_col2'] . '; }</style>';
+		}
+
+		]]></add>
+		</operation>
+	</file>
+
+
+</modification>

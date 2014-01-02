@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.elkarte.net/site/package-info">
+<package-info xmlns="http://www.elkarte.net/site/package-info" xmlns:elk="http://www.elkarte.net/">
+	<id>ElkArte:Topic_Solved</id>
+	<name>Topic Solved</name>
+	<version>1.0</version>
+	<type>modification</type>
+	<license><![CDATA[
+/**
+ * SolveTopic
+ *
+ * @license BSD http://opensource.org/licenses/BSD-3-Clause
+ *
+ * @version 1.0
+ */
+]]></license>
+	<install for="1.0 Beta - 1.0.99">
+		<readme type="file" parsebbc="true">readme.txt</readme>
+		<require-file name="controller/SolveTopic.controller.php" destination="CONTROLLERDIR" />
+		<require-file name="admin/ManageSolveTopic.controller.php" destination="ADMINDIR" />
+		<require-file name="subs/SolveTopic.subs.php" destination="SUBSDIR" />
+		<require-file name="templates/SolveTopic.template.php" destination="$themedir" />
+		<require-file name="SolveTopicIntegration.php" destination="SOURCEDIR" />
+		<require-file name="solved.png" destination="$imagesdir/post" />
+		<require-file name="SolveTopic.english.php" destination="LANGUAGEDIR/english" />
+		<hook hook="integrate_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
+		<hook hook="integrate_admin_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="iaa_solvetopic" />
+		<hook hook="integrate_load_permissions" file="SOURCEDIR/SolveTopicIntegration.php" function="ilp_solvetopic" />
+		<hook hook="integrate_mod_buttons" file="SOURCEDIR/SolveTopicIntegration.php" function="imb_solvetopic" />
+		<hook hook="integrate_topic_query" file="SOURCEDIR/SolveTopicIntegration.php" function="itq_solvetopic" />
+		<hook hook="integrate_display_topic" file="SOURCEDIR/SolveTopicIntegration.php" function="idt_solvetopic" />
+		<hook hook="integrate_log_types" file="SOURCEDIR/SolveTopicIntegration.php" function="ilt_solvetopic" />
+		<hook hook="integrate_moderation_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="ima_solvetopic" />
+		<hook hook="integrate_messageindex_topics" file="SOURCEDIR/SolveTopicIntegration.php" function="imt_solvetopic" />
+		<hook hook="integrate_messageindex_icons" file="SOURCEDIR/SolveTopicIntegration.php" function="imi_solvetopic" />
+		<database>install.php</database>
+		<redirect url="?action=admin;area=addonsettings;sa=solvetopic" />
+	</install>
+
+	<uninstall for="1.0 Beta - 1.0.99">
+		<database>uninstall-db.php</database>
+		<readme type="inline">This will uninstall the Solved Topic Addon.</readme>
+		<hook reverse="true" hook="integrate_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
+		<hook reverse="true" hook="integrate_admin_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="iaa_solvetopic" />
+		<hook reverse="true" hook="integrate_load_permissions" file="SOURCEDIR/SolveTopicIntegration.php" function="ilp_solvetopic" />
+		<hook reverse="true" hook="integrate_mod_buttons" file="SOURCEDIR/SolveTopicIntegration.php" function="imb_solvetopic" />
+		<hook reverse="true" hook="integrate_topic_query" file="SOURCEDIR/SolveTopicIntegration.php" function="itq_solvetopic" />
+		<hook reverse="true" hook="integrate_display_topic" file="SOURCEDIR/SolveTopicIntegration.php" function="idt_solvetopic" />
+		<hook reverse="true" hook="integrate_log_types" file="SOURCEDIR/SolveTopicIntegration.php" function="ilt_solvetopic" />
+		<hook reverse="true" hook="integrate_moderation_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="ima_solvetopic" />
+		<hook reverse="true" hook="integrate_messageindex_topics" file="SOURCEDIR/SolveTopicIntegration.php" function="imt_solvetopic" />
+		<hook reverse="true" hook="integrate_messageindex_icons" file="SOURCEDIR/SolveTopicIntegration.php" function="imi_solvetopic" />
+		<remove-file name="CONTROLLERDIR/SolveTopic.controller.php" />
+		<remove-file name="ADMINDIR/ManageSolveTopic.controller.php" />
+		<remove-file name="SUBSDIR/SolveTopic.subs.php" />
+		<remove-file name="$themedir/SolveTopic.template.php" />
+		<remove-file name="SOURCEDIR/SolveTopicIntegration.php" />
+		<remove-file name="$imagesdir/post/solved.png" />
+		<remove-file name="LANGUAGEDIR/english/SolveTopic.english.php" />
+	</uninstall>
+</package-info>
