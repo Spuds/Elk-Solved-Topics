@@ -36,7 +36,8 @@ class SolveTopic_Controller extends Action_Controller
 
 	/**
 	 * This method is executed before any action handler.
-	 * Loads common needed items
+	 *
+	 * - Loads common needed items
 	 */
 	public function pre_dispatch()
 	{
@@ -47,11 +48,12 @@ class SolveTopic_Controller extends Action_Controller
 
 	/**
 	 * Mark a topic solved.
-	 * 		- solves a topic, toggles between solved/not solved.
-	 * 		- requires the solve_own or solve_any permission.
-	 * 		- logs the action to the moderator log.
-	 * 		- returns to the topic after it is done.
-	 * 		- accessed via ?action=solvetopic.
+	 *
+	 * - toggles between solved/not solved.
+	 * - requires the solve_own or solve_any permission.
+	 * - logs the action to the moderator log.
+	 * - returns to the topic after it is done.
+	 * - accessed via ?action=solvetopic.
 	 */
 	public function action_SolveTopic()
 	{
@@ -90,8 +92,9 @@ class SolveTopic_Controller extends Action_Controller
 
 	/**
 	 * Prepares the information from the moderation log for viewing solved topic entries
-	 * Disallows the deletion of events within twenty-four hours of now.
-	 * Accessed via ?action=moderate;area=solvelog
+	 *
+	 * - Disallows the deletion of events within twenty-four hours of now.
+	 * - Accessed via ?action=moderate;area=solvelog
 	 *
 	 * @uses Modlog template, main sub-template.
 	 */
@@ -268,8 +271,9 @@ class SolveTopic_Controller extends Action_Controller
 
 	/**
 	 * Callback for createList()
-	 * Returns a list of moderation log entries
-	 * Uses list_getModLogEntries in modlog subs
+	 *
+	 * - Returns a list of moderation log entries
+	 * - Uses list_getModLogEntries in modlog subs
 	 *
 	 * @param int $start
 	 * @param int $items_per_page
@@ -284,8 +288,9 @@ class SolveTopic_Controller extends Action_Controller
 
 	/**
 	 * Callback for createList()
-	 * Returns a count of solved topic moderation log entries
-	 * Uses list_getModLogEntryCount in modlog subs
+	 *
+	 * - Returns a count of solved topic moderation log entries
+	 * - Uses list_getModLogEntryCount in modlog subs
 	 *
 	 * @param int $start
 	 * @param int $items_per_page

@@ -14,10 +14,7 @@
  * @version 1.0
  */
 ]]></license>
-	<!-- Source files -->
-
-
-	<file name="$sourcedir/MessageIndex.php"><!-- Be sure to get the topic data, to be able to display whether something is solved or not. -->
+	<file name="$sourcedir/MessageIndex.php">
 		<operation>
 			<search position="before"><![CDATA[mf.smileys_enabled AS first_smileys]]></search>
 			<add><![CDATA[, t.solved]]></add>
@@ -36,6 +33,5 @@
 		]]></add>
 		</operation>
 	</file>
-
 
 </modification>

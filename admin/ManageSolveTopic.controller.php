@@ -32,7 +32,8 @@ class ManageSolveTopic_Controller extends Action_Controller
 
 	/**
 	 * Default method.
-	 * Requires admin_forum permissions
+	 *
+	 * - Requires admin_forum permissions
 	 *
 	 * @uses Topics Solved language file
 	 */
@@ -49,9 +50,9 @@ class ManageSolveTopic_Controller extends Action_Controller
 
 	/**
 	 * Modify any setting related to SolveTopic.
-	 * Requires the admin_forum permission.
 	 *
-	 * Accessed from ?action=admin;sa=solvetopic
+	 * - Requires the admin_forum permission.
+	 * - Accessed from ?action=admin;sa=solvetopic
 	 */
 	public function action_TSSettings_display()
 	{
@@ -94,7 +95,8 @@ class ManageSolveTopic_Controller extends Action_Controller
 
 	/**
 	 * Initialize Topic Solved Form.
-	 * Retrieve and return the administration settings.
+	 *
+	 * - Retrieve and return the administration settings.
 	 */
 	private function _initTSSettingsForm()
 	{

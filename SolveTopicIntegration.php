@@ -21,7 +21,7 @@ if (!defined('ELK'))
  * Addon Hook, integrate_modify_modifications, Called from AddonSettings_Controller
  * Adds new subActions to the available addon array
  *
- * @param array $subActions
+ * @param mixed[] $subActions
  */
 function imm_solvetopic(&$subActions)
 {
@@ -37,7 +37,8 @@ function imm_solvetopic(&$subActions)
  * Admin Hook, integrate_admin_areas, called from Admin.php
  * Used to add/modify admin menu areas
  *
- * @param array $admin_areas
+ * @param mixed[] $admin_areas
+ * @param mixed[] $menuOptions
  */
 function iaa_solvetopic(&$admin_areas, &$menuOptions)
 {
@@ -63,11 +64,11 @@ function iaa_solvetopic(&$admin_areas, &$menuOptions)
  * Permissions hook, integrate_load_permissions, called from ManagePermissions.subs.php
  * Used to add new permisssions
  *
- * @param array $permissionGroups
- * @param array $permissionList
- * @param array $leftPermissionGroups
- * @param array $hiddenPermissions
- * @param array $relabelPermissions
+ * @param mixed[] $permissionGroups
+ * @param mixed[] $permissionList
+ * @param mixed[] $leftPermissionGroups
+ * @param mixed[] $hiddenPermissions
+ * @param mixed[] $relabelPermissions
  */
 function ilp_solvetopic(&$permissionGroups, &$permissionList, &$leftPermissionGroups, &$hiddenPermissions, &$relabelPermissions)
 {
@@ -111,9 +112,9 @@ function imb_solvetopic()
  * Topic query hook, integrate_topic_query called from Display.controller
  * Used to add additional query details to the topic display query
  *
- * @param array $topic_selects
- * @param array $topic_tables
- * @param array $topic_parameters
+ * @param string[] $topic_selects
+ * @param string[] $topic_tables
+ * @param string[] $topic_parameters
  */
 function itq_solvetopic(&$topic_selects, &$topic_tables, &$topic_parameters)
 {
@@ -124,9 +125,7 @@ function itq_solvetopic(&$topic_selects, &$topic_tables, &$topic_parameters)
  * Topic display hook, integrate_display_topic called from Display.controller
  * Used to gain access to the topicquery results
  *
- * @param array $topic_selects
- * @param array $topic_tables
- * @param array $topic_parameters
+ * @param mixed[] $topicinfo
  */
 function idt_solvetopic($topicinfo)
 {
@@ -139,7 +138,7 @@ function idt_solvetopic($topicinfo)
  * Log Types hook, integrate_log_types, called from Logging.php
  * used to add the solved topic log to the list of log types
  *
- * @param type $log_types
+ * @param int $log_types
  */
 function ilt_solvetopic(&$log_types)
 {
@@ -150,8 +149,8 @@ function ilt_solvetopic(&$log_types)
  * Add moderation menu items, integrate_moderation_areas called from ModerationCenter Controller
  * Provide access from the moderation centrer to the solved topic log
  *
- * @param array $moderation_areas
- * @param array $menuOptions
+ * @param mixed[] $moderation_areas
+ * @param mixed[] $menuOptions
  */
 function ima_solvetopic(&$moderation_areas, &$menuOptions)
 {
@@ -183,7 +182,7 @@ function ima_solvetopic(&$moderation_areas, &$menuOptions)
  * Can also add additional items to $context ;)
  *
  * @param string $sort_column
- * @param array $indexOptions
+ * @param mixed[] $indexOptions
  */
 function imt_solvetopic(&$sort_column, &$indexOptions)
 {
@@ -197,7 +196,7 @@ function imt_solvetopic(&$sort_column, &$indexOptions)
  * Message icon hook, integrate_messageindex_icons, called from MessageIndex.subs.php
  * Used to add additional known message index icons
  *
- * @param array $stable_icons
+ * @param mixed[] $stable_icons
  */
 function imi_solvetopic(&$stable_icons)
 {

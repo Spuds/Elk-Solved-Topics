@@ -43,7 +43,7 @@ function getSolveTopicDetails($topic)
 }
 
 /**
- * Change the status of a topic,  solved or not
+ * Change the status of a topic, solved or not
  *
  * @param int $topic id to the topic we are working on
  * @param int $firstmsg id of the first message so we can set the topic icon

@@ -17,6 +17,9 @@
 if (!defined('ELK'))
 	die('No access...');
 
+/**
+ * Show a header that the topic is solved
+ */
 function template_solvetopic_header_above()
 {
 	global $txt;
