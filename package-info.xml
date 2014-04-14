@@ -23,7 +23,7 @@
 		<require-file name="SolveTopicIntegration.php" destination="SOURCEDIR" />
 		<require-file name="solved.png" destination="$imagesdir/post" />
 		<require-file name="SolveTopic.english.php" destination="LANGUAGEDIR/english" />
-		<hook hook="integrate_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
+		<hook hook="integrate_sa_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
 		<hook hook="integrate_admin_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="iaa_solvetopic" />
 		<hook hook="integrate_load_permissions" file="SOURCEDIR/SolveTopicIntegration.php" function="ilp_solvetopic" />
 		<hook hook="integrate_mod_buttons" file="SOURCEDIR/SolveTopicIntegration.php" function="imb_solvetopic" />
@@ -40,7 +40,7 @@
 	<uninstall for="1.0 Beta - 1.0.99">
 		<database>uninstall-db.php</database>
 		<readme type="inline">This will uninstall the Solved Topic Addon.</readme>
-		<hook reverse="true" hook="integrate_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
+		<hook reverse="true" hook="integrate_sa_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
 		<hook reverse="true" hook="integrate_admin_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="iaa_solvetopic" />
 		<hook reverse="true" hook="integrate_load_permissions" file="SOURCEDIR/SolveTopicIntegration.php" function="ilp_solvetopic" />
 		<hook reverse="true" hook="integrate_mod_buttons" file="SOURCEDIR/SolveTopicIntegration.php" function="imb_solvetopic" />
