@@ -18,7 +18,7 @@ if (!defined('ELK'))
 	die('No access...');
 
 /**
- * Addon Hook, integrate_modify_modifications, Called from AddonSettings_Controller
+ * Addon Hook, integrate_sa_modify_modifications, Called from AddonSettings_Controller
  * Adds new subActions to the available addon array
  *
  * @param mixed[] $subActions
@@ -76,10 +76,10 @@ function ilp_solvetopic(&$permissionGroups, &$permissionList, &$leftPermissionGr
 }
 
 /**
- * integrate_mod_buttons hook, called from Display.controller
- * Used to add additional moderation buttons to topic views
+ * integrate_display_buttons hook, called from Display.controller
+ * Used to add additional buttons to topic views
  */
-function imb_solvetopic()
+function idb_solvetopic()
 {
 	global $context, $scripturl, $modSettings, $board;
 

@@ -60,7 +60,7 @@ class ManageSolveTopic_Controller extends Action_Controller
 
 		// Get a list of boards that we can enable this on
 		require_once(SUBSDIR . '/Boards.subs.php');
-		$context +=  getBoardList(array('not_redirection' => true));
+		$context += getBoardList(array('not_redirection' => true));
 
 		// Instantiate the form
 		$this->_initTSSettingsForm();

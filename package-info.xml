@@ -26,7 +26,7 @@
 		<hook hook="integrate_sa_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
 		<hook hook="integrate_admin_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="iaa_solvetopic" />
 		<hook hook="integrate_load_permissions" file="SOURCEDIR/SolveTopicIntegration.php" function="ilp_solvetopic" />
-		<hook hook="integrate_mod_buttons" file="SOURCEDIR/SolveTopicIntegration.php" function="imb_solvetopic" />
+		<hook hook="integrate_display_buttons" file="SOURCEDIR/SolveTopicIntegration.php" function="idb_solvetopic" />
 		<hook hook="integrate_topic_query" file="SOURCEDIR/SolveTopicIntegration.php" function="itq_solvetopic" />
 		<hook hook="integrate_display_topic" file="SOURCEDIR/SolveTopicIntegration.php" function="idt_solvetopic" />
 		<hook hook="integrate_log_types" file="SOURCEDIR/SolveTopicIntegration.php" function="ilt_solvetopic" />
@@ -43,7 +43,7 @@
 		<hook reverse="true" hook="integrate_sa_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
 		<hook reverse="true" hook="integrate_admin_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="iaa_solvetopic" />
 		<hook reverse="true" hook="integrate_load_permissions" file="SOURCEDIR/SolveTopicIntegration.php" function="ilp_solvetopic" />
-		<hook reverse="true" hook="integrate_mod_buttons" file="SOURCEDIR/SolveTopicIntegration.php" function="imb_solvetopic" />
+		<hook reverse="true" hook="integrate_display_buttons" file="SOURCEDIR/SolveTopicIntegration.php" function="idb_solvetopic" />
 		<hook reverse="true" hook="integrate_topic_query" file="SOURCEDIR/SolveTopicIntegration.php" function="itq_solvetopic" />
 		<hook reverse="true" hook="integrate_display_topic" file="SOURCEDIR/SolveTopicIntegration.php" function="idt_solvetopic" />
 		<hook reverse="true" hook="integrate_log_types" file="SOURCEDIR/SolveTopicIntegration.php" function="ilt_solvetopic" />
