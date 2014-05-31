@@ -104,7 +104,7 @@ function idb_solvetopic()
 		'text' => empty($context['is_solved']) ? 'solve_topic' : 'unsolve_topic',
 		'lang' => true,
 		'custom' => empty($context['is_solved']) ? 'style="font-weight:700;color:green"' : 'style="font-weight:700;color:red"',
-		'url' => $scripturl . '?action=solvetopic;topic=' . $context['current_topic'] . '.' . $context['start'] . ';' . $context['session_var'] . '=' . $context['session_id']
+		'url' => $scripturl . '?action=SolveTopic;topic=' . $context['current_topic'] . '.' . $context['start'] . ';' . $context['session_var'] . '=' . $context['session_id']
 	);
 }
 
