@@ -19,9 +19,9 @@
 		<require-file name="controller/SolveTopic.controller.php" destination="CONTROLLERDIR" />
 		<require-file name="admin/ManageSolveTopic.controller.php" destination="ADMINDIR" />
 		<require-file name="subs/SolveTopic.subs.php" destination="SUBSDIR" />
-		<require-file name="templates/SolveTopic.template.php" destination="$themedir" />
+		<require-file name="templates/SolveTopic.template.php" destination="THEMEDIR" />
 		<require-file name="SolveTopicIntegration.php" destination="SOURCEDIR" />
-		<require-file name="solved.png" destination="$imagesdir/post" />
+		<require-file name="solved.png" destination="IMAGESDIR/post" />
 		<require-file name="SolveTopic.english.php" destination="LANGUAGEDIR/english" />
 		<hook hook="integrate_sa_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
 		<hook hook="integrate_admin_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="iaa_solvetopic" />
@@ -53,9 +53,9 @@
 		<remove-file name="CONTROLLERDIR/SolveTopic.controller.php" />
 		<remove-file name="ADMINDIR/ManageSolveTopic.controller.php" />
 		<remove-file name="SUBSDIR/SolveTopic.subs.php" />
-		<remove-file name="$themedir/SolveTopic.template.php" />
+		<remove-file name="THEMEDIR/SolveTopic.template.php" />
 		<remove-file name="SOURCEDIR/SolveTopicIntegration.php" />
-		<remove-file name="$imagesdir/post/solved.png" />
+		<remove-file name="IMAGESDIR/post/solved.png" />
 		<remove-file name="LANGUAGEDIR/english/SolveTopic.english.php" />
 	</uninstall>
 </package-info>
