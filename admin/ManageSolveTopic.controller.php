@@ -43,7 +43,7 @@ class ManageSolveTopic_Controller extends Action_Controller
 		loadLanguage('SolveTopic');
 
 		// We're working with settings here.
-		require_once(SUBSDIR . '/Settings.class.php');
+		require_once(SUBSDIR . '/SettingsForm.class.php');
 
 		$this->action_TSSettings_display();
 	}

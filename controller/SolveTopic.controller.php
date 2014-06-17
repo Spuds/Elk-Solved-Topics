@@ -134,7 +134,7 @@ class SolveTopic_Controller extends Action_Controller
 			deleteLogAction(4, 24, $_POST['delete']);
 		}
 
-		require_once(SUBSDIR . '/List.class.php');
+		require_once(SUBSDIR . '/GenericList.class.php');
 
 		// Create a solved topic listing
 		$listOptions = array(
