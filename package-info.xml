@@ -18,10 +18,10 @@
 		<readme type="file" parsebbc="true">readme.txt</readme>
 		<license type="inline">This ElkArte addon is released under a BSD 3 clause license, http://opensource.org/licenses/BSD-3-Clause</license>
 
-		<require-file name="controller/SolveTopic.controller.php" destination="CONTROLLERDIR" />
-		<require-file name="admin/ManageSolveTopic.controller.php" destination="ADMINDIR" />
-		<require-file name="subs/SolveTopic.subs.php" destination="SUBSDIR" />
-		<require-file name="templates/SolveTopic.template.php" destination="THEMEDIR" />
+		<require-file name="SolveTopic.controller.php" destination="CONTROLLERDIR" />
+		<require-file name="ManageSolveTopic.controller.php" destination="ADMINDIR" />
+		<require-file name="SolveTopic.subs.php" destination="SUBSDIR" />
+		<require-file name="SolveTopic.template.php" destination="THEMEDIR" />
 		<require-file name="SolveTopicIntegration.php" destination="SOURCEDIR" />
 		<require-file name="solved.png" destination="IMAGESDIR/post" />
 		<require-file name="SolveTopic.english.php" destination="LANGUAGEDIR/english" />
