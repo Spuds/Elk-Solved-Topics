@@ -26,5 +26,5 @@ $txt['enable_solved_log'] = 'Çözülen konuların  kaydını etkinleştirin (Et
 
 $txt['solvetopic_board_desc'] = 'Lütfen konuyu çözüldü özelliğini etkinleştirmek istediğiniz bölümleri seçin.';
 $txt['solvetopic_display_notice'] = 'Çözülmüş konuların içinde çözüldüğüne dair not görüntüle';
-$txt['solvetopic_solved'] = '<strong>Konuyu Çözüldü/strong><br />Bu konu çözüldü olarak işaretlendi ve daha fazla dikkat gerektirir.';
+$txt['solvetopic_solved'] = '<strong>Konuyu Çözüldü</strong><br />Bu konu çözüldü olarak işaretlendi ve daha fazla dikkat gerektirir.';
 $txt['solvetopic_not_enabled'] = 'Konu çözüldü bu bölümde etkin değil.';
