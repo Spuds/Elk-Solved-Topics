@@ -11,6 +11,3 @@ This [ElkArte](http://www.elkarte.net "ElkArte") addon adds a new capability, al
  * Permissions include solve own topic and any topic.
  * Adds quick moderation option when select boxes are used
  * Includes a topic solved log, which can be viewed both from Admin are and Moderation areas.
-
-### Repo / Download
-[https://bitbucket.org/spuds_/elk-solved-topics](https://bitbucket.org/spuds_/elk-solved-topics)
