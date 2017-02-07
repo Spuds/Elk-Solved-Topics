@@ -26,6 +26,7 @@
 		<require-file name="solved.png" destination="IMAGESDIR/post" />
 		<require-file name="SolveTopic.english.php" destination="LANGUAGEDIR/english" />
 		<require-file name="SolveTopic.french.php" destination="LANGUAGEDIR/french" />
+		<require-file name="SolveTopic.turkish.php" destination="LANGUAGEDIR/turkish" />
 
 		<hook hook="integrate_sa_modify_modifications" file="SOURCEDIR/SolveTopicIntegration.php" function="imm_solvetopic" />
 		<hook hook="integrate_admin_areas" file="SOURCEDIR/SolveTopicIntegration.php" function="iaa_solvetopic" />
@@ -65,5 +66,6 @@
 		<remove-file name="IMAGESDIR/post/solved.png" />
 		<remove-file name="LANGUAGEDIR/english/SolveTopic.english.php" />
 		<remove-file name="LANGUAGEDIR/french/SolveTopic.french.php" />
+		<remove-file name="LANGUAGEDIR/turkish/SolveTopic.turkish.php" />
 	</uninstall>
 </package-info>
