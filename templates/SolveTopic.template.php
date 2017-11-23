@@ -15,7 +15,9 @@
  */
 
 if (!defined('ELK'))
+{
 	die('No access...');
+}
 
 /**
  * Show a header that the topic is solved
@@ -37,7 +39,7 @@ function template_callback_selectboards()
 	// Since we are in a callback, close the config_vars DL we are currently in
 	echo '
 					</dl>
-					<ul class="ignoreboards floatleft">';
+					<ul class="ignoreboards">';
 
 	// Create two columns to make this as compact as we can
 	$i = 0;
@@ -45,35 +47,15 @@ function template_callback_selectboards()
 
 	foreach ($context['categories'] as $category)
 	{
-		// Done with the left column, now start the right one.
-		if ($i === $limit)
-		{
-			echo '
-					</ul>
-					<ul class="ignoreboards floatright">';
-
-			$i++;
-		}
-
 		// Start with a category header
 		echo '
 						<li class="category">
-							<h4 class="strong success">', $category['name'], '</h4>
+							<h3 class="strong success">', $category['name'], '</h3>
 							<ul>';
 
 		// Every board in this category
 		foreach ($category['boards'] as $board)
 		{
-			// Filled the left column up listing the boards in this category so we need to start the right list
-			if ($i === $limit)
-				echo '
-							</ul>
-						</li>
-					</ul>
-					<ul class="ignoreboards floatright">
-						<li class="category">
-							<ul>';
-
 			// Board name checkbox
 			echo '
 								<li class="board" style="margin-', $context['right_to_left'] ? 'right' : 'left', ': ', $board['child_level'] * 2, 'em;">
@@ -81,8 +63,6 @@ function template_callback_selectboards()
 										<input type="checkbox" id="solvetopic_board_', $board['id'], '" name="solvetopic_board_', $board['id'], '" value="', $board['id'], '"', !empty($modSettings['solvetopic_board_' . $board['id']]) ? ' checked="checked"' : '', ' class="input_check" /> ', $board['name'], '
 									</label>
 								</li>';
-
-			$i++;
 		}
 
 		echo '
