@@ -15,7 +15,9 @@
  */
 
 if (!defined('ELK'))
+{
 	die('No access...');
+}
 
 /**
  * Addon Hook, integrate_sa_modify_modifications, Called from AddonSettings_Controller

@@ -15,7 +15,9 @@
  */
 
 if (!defined('ELK'))
+{
 	die('No access...');
+}
 
 /**
  * Fetches the topic owner, current solved status, and the id of the first message in the topic
@@ -28,7 +30,8 @@ function getSolveTopicDetails($topic)
 
 	// Get the topic owner.
 	$request = $db->query('', '
-		SELECT id_member_started, solved, id_first_msg
+		SELECT 
+			id_member_started, solved, id_first_msg
 		FROM {db_prefix}topics
 		WHERE id_topic = {int:current_topic}
 		LIMIT 1',

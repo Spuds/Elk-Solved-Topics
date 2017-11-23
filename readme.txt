@@ -1,4 +1,4 @@
-[center][size=16pt][b]Solve Topic V1.0[/b][/size][/center]
+[center][size=16pt][b]Solve Topic[/b][/size][/center]
 [hr]
 [color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
 This Elkarte addon is released under a [url=http://opensource.org/licenses/BSD-3-Clause]BSD-3-Clause[/url] license

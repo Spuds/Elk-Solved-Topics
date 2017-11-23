@@ -15,7 +15,9 @@
  */
 
 if (!defined('ELK'))
+{
 	die('No access...');
+}
 
 /**
  * Solve Topic controller.
@@ -61,11 +63,15 @@ class SolveTopic_Controller extends Action_Controller
 
 		// See if its enabled in this board.
 		if (empty($modSettings['solvetopic_board_' . $board]))
+		{
 			fatal_lang_error('solvetopic_not_enabled', false);
+		}
 
 		// You need a topic to solve.
 		if (empty($topic))
+		{
 			fatal_lang_error('not_a_topic', false);
+		}
 
 		checkSession('get');
 
@@ -75,16 +81,22 @@ class SolveTopic_Controller extends Action_Controller
 		// With the owner, we validate they can do this
 		$user_solve = !allowedTo('solve_topic_any', $board);
 		if ($user_solve && $starter == $user_info['id'])
+		{
 			isAllowedTo('solve_topic_own', $board);
+		}
 		else
+		{
 			isAllowedTo('solve_topic_any', $board);
+		}
 
 		// Update the solved status, change the icon to reflect this
 		markSolveTopic($topic, $firstmsg, $solved);
 
 		// Log this if enabled, someone may want to track progress
 		if (!empty($modSettings['enable_solved_log']))
+		{
 			logAction(empty($solved) ? 'solve' : 'unsolve', array('topic' => $topic, 'board' => $board, 'member' => $starter), 'solve');
+		}
 
 		// Let's go back home.
 		redirectexit('topic=' . $topic . '.' . $_REQUEST['start']);
@@ -292,9 +304,6 @@ class SolveTopic_Controller extends Action_Controller
 	 * - Returns a count of solved topic moderation log entries
 	 * - Uses list_getModLogEntryCount in modlog subs
 	 *
-	 * @param int $start
-	 * @param int $items_per_page
-	 * @param string $sort
 	 * @param int $log_type
 	 */
 	public function list_countSolvedEntires($log_type)

@@ -17,9 +17,13 @@
  */
 
 if (file_exists(dirname(__FILE__) . '/SSI.php') && !defined('ELK'))
+{
 	require_once(dirname(__FILE__) . '/SSI.php');
+}
 elseif (!defined('ELK'))
+{
 	die('<b>Error:</b> Cannot uninstall - please verify you put this file in the same place as ElkArte\'s SSI.php.');
+}
 
 $db = database();
 
@@ -28,11 +32,14 @@ $remove = array('enable_solved');
 foreach ($modSettings as $variable => $value)
 {
 	if (strpos($variable, 'topicsolved') === 0)
+	{
 		$remove[] = $variable;
+	}
 }
 
 $db->query('', '
-	DELETE FROM {db_prefix}settings WHERE variable IN ({array_string:vars})',
+	DELETE FROM {db_prefix}settings 
+	WHERE variable IN ({array_string:vars})',
 	array(
 		'vars' => $remove
 	)
@@ -70,7 +77,11 @@ $db->query('', '
 if (ELK === 'SSI')
 {
 	if (in_array('solved', $installed))
+	{
 		echo 'All topic-solved activity has been removed!';
+	}
 	else
+	{
 		echo 'Database edits failed!';
+	}
 }

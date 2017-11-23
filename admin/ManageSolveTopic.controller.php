@@ -15,7 +15,9 @@
  */
 
 if (!defined('ELK'))
+{
 	die('No access...');
+}
 
 /**
  * Topic Solved administration controller.
@@ -80,7 +82,9 @@ class ManageSolveTopic_Controller extends Action_Controller
 			{
 				$board_select = array();
 				foreach ($category['boards'] as $board)
+				{
 					$board_select['solvetopic_board_' . $board['id']] = isset($_POST['solvetopic_board_' . $board['id']]);
+				}
 
 				updateSettings($board_select);
 			}
@@ -119,10 +123,10 @@ class ManageSolveTopic_Controller extends Action_Controller
 		loadTemplate('SolveTopic');
 
 		$config_vars = array(
-				array('check', 'enable_solved_log', 'disabled' => !in_array('ml', $context['admin_features'])),
-				array('check', 'solvetopic_display_notice'),
+			array('check', 'enable_solved_log', 'disabled' => !in_array('ml', $context['admin_features'])),
+			array('check', 'solvetopic_display_notice'),
 			array('title', 'solvetopic_board_desc'),
-				array('callback', 'selectboards'),
+			array('callback', 'selectboards'),
 		);
 
 		return $config_vars;
