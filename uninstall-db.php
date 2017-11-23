@@ -28,6 +28,7 @@ elseif (!defined('ELK'))
 $db = database();
 
 // Clean up the settings table
+global $modSettings;
 $remove = array('enable_solved');
 foreach ($modSettings as $variable => $value)
 {

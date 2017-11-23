@@ -14,7 +14,7 @@
  * @version 1.0
  */
 ]]></license>
-	<install for="1.0 - 1.0.99">
+	<install for="1.0 - 1.1.99">
 		<readme type="file" parsebbc="true">readme.txt</readme>
 		<license type="inline">This ElkArte addon is released under a BSD 3 clause license, http://opensource.org/licenses/BSD-3-Clause</license>
 
@@ -43,7 +43,7 @@
 		<redirect url="?action=admin;area=addonsettings;sa=solvetopic" />
 	</install>
 
-	<uninstall for="1.0 - 1.0.99">
+	<uninstall for="1.0 - 1.1.99">
 		<readme type="inline">This will uninstall the Solved Topic Addon.</readme>
 		<database>uninstall-db.php</database>
 
