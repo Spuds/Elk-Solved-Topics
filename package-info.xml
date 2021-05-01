@@ -3,7 +3,7 @@
 <package-info xmlns="https://www.elkarte.net/site/package-info" xmlns:elk="https://www.elkarte.net/">
 	<id>ElkArte:Topic_Solved</id>
 	<name>Topic Solved</name>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<type>addon</type>
 	<license><![CDATA[
 /**
@@ -11,10 +11,10 @@
  *
  * @license BSD http://opensource.org/licenses/BSD-3-Clause
  *
- * @version 1.0.1
+ * @version 1.0.2
  */
 ]]></license>
-	<install for="1.0 - 1.1.99">
+	<install for="1.1 - 1.1.99">
 		<readme type="file" parsebbc="true">readme.txt</readme>
 		<license type="inline">This ElkArte addon is released under a BSD 3 clause license, http://opensource.org/licenses/BSD-3-Clause</license>
 
@@ -24,6 +24,7 @@
 		<require-file name="templates/SolveTopic.template.php" destination="THEMEDIR" />
 		<require-file name="SolveTopicIntegration.php" destination="SOURCEDIR" />
 		<require-file name="solved.png" destination="IMAGESDIR/post" />
+		<require-file name="check.png" destination="IMAGESDIR/post" />
 		<require-file name="SolveTopic.english.php" destination="LANGUAGEDIR/english" />
 		<require-file name="SolveTopic.french.php" destination="LANGUAGEDIR/french" />
 		<require-file name="SolveTopic.turkish.php" destination="LANGUAGEDIR/turkish" />
@@ -43,7 +44,7 @@
 		<redirect url="?action=admin;area=addonsettings;sa=solvetopic" />
 	</install>
 
-	<uninstall for="1.0 - 1.1.99">
+	<uninstall for="1.1 - 1.1.99">
 		<readme type="inline">This will uninstall the Solved Topic Addon.</readme>
 		<database>uninstall-db.php</database>
 
@@ -64,6 +65,7 @@
 		<remove-file name="THEMEDIR/SolveTopic.template.php" />
 		<remove-file name="SOURCEDIR/SolveTopicIntegration.php" />
 		<remove-file name="IMAGESDIR/post/solved.png" />
+		<remove-file name="IMAGESDIR/post/check.png" />
 		<remove-file name="LANGUAGEDIR/english/SolveTopic.english.php" />
 		<remove-file name="LANGUAGEDIR/french/SolveTopic.french.php" />
 		<remove-file name="LANGUAGEDIR/turkish/SolveTopic.turkish.php" />

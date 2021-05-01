@@ -2,7 +2,7 @@
 
 /**
  * @name      SolveTopic
- * @copyright ElkArte Forum contributors
+ * @copyright 2014-2021 ElkArte Forum contributors
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
  * This software is a derived product, based on:
@@ -10,7 +10,7 @@
  * TopicSolved 1.1.1
  * Copyright 2006-2008 Blue Dream (http://www.simpleportal.net)
  *
- * @version 1.0.1
+ * @version 1.0.2
  *
  */
 
@@ -20,13 +20,6 @@
  */
 class ManageSolveTopic_Controller extends Action_Controller
 {
-	/**
-	 * Topic Solved settings form
-	 *
-	 * @var TSSettingsForm
-	 */
-	protected $_TSSettingsForm;
-
 	/**
 	 * Default method.
 	 *
@@ -38,9 +31,6 @@ class ManageSolveTopic_Controller extends Action_Controller
 	{
 		isAllowedTo('admin_forum');
 		loadLanguage('SolveTopic');
-
-		// We're working with settings here.
-		require_once(SUBSDIR . '/SettingsForm.class.php');
 
 		$this->action_TSSettings_display();
 	}
@@ -60,19 +50,21 @@ class ManageSolveTopic_Controller extends Action_Controller
 		$context += getBoardList(array('not_redirection' => true));
 
 		// Instantiate the form
-		$this->_initTSSettingsForm();
-		$config_vars = $this->_TSSettingsForm->settings();
+		$settingsForm = new Settings_Form(Settings_Form::DB_ADAPTER);
+
+		// Initialize settings
+		$settingsForm->setConfigVars($this->_settings());
 
 		// Set up the template
 		$context['post_url'] = $scripturl . '?action=admin;area=addonsettings;save;sa=solvetopic';
 		$context['settings_title'] = $txt['topic_solved_title'];
 
 		// Saving them ?
-		if (isset($_GET['save']))
+		if (isset($this->_req->query->save))
 		{
 			checkSession();
 
-			// Mange the board selections from the callback
+			// Manage the board selections from the callback
 			foreach ($context['categories'] as $category)
 			{
 				$board_select = array();
@@ -85,27 +77,13 @@ class ManageSolveTopic_Controller extends Action_Controller
 			}
 
 			// All the rest normally
-			Settings_Form::save_db($config_vars);
+			$settingsForm->setConfigValues((array) $this->_req->post);
+			$settingsForm->save();
+
 			redirectexit('action=admin;area=addonsettings;sa=solvetopic');
 		}
 
-		Settings_Form::prepare_db($config_vars);
-	}
-
-	/**
-	 * Initialize Topic Solved Form.
-	 *
-	 * - Retrieve and return the administration settings.
-	 */
-	private function _initTSSettingsForm()
-	{
-		// Instantiate the form
-		$this->_TSSettingsForm = new Settings_Form();
-
-		// Initialize settings
-		$config_vars = $this->_settings();
-
-		return $this->_TSSettingsForm->settings($config_vars);
+		$settingsForm->prepare();
 	}
 
 	/**

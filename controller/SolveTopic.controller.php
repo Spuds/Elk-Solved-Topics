@@ -2,7 +2,7 @@
 
 /**
  * @name      SolveTopic
- * @copyright ElkArte Forum contributors
+ * @copyright 2014-2021 ElkArte Forum contributors
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
  * This software is a derived product, based on:
@@ -10,7 +10,7 @@
  * TopicSolved 1.1.1
  * Copyright 2006-2008 Blue Dream (http://www.simpleportal.net)
  *
- * @version 1.0.1
+ * @version 1.0.2
  *
  */
 
@@ -46,11 +46,11 @@ class SolveTopic_Controller extends Action_Controller
 	/**
 	 * Mark a topic solved.
 	 *
-	 * - toggles between solved/not solved.
-	 * - requires the solve_own or solve_any permission.
-	 * - logs the action to the moderator log.
-	 * - returns to the topic after it is done.
-	 * - accessed via ?action=solvetopic.
+	 * - Toggles between solved/not solved.
+	 * - Requires the solve_own or solve_any permission.
+	 * - Logs the action to the moderator log.
+	 * - Returns to the topic after it is done.
+	 * - Accessed via ?action=solvetopic.
 	 */
 	public function action_SolveTopic()
 	{
@@ -59,13 +59,13 @@ class SolveTopic_Controller extends Action_Controller
 		// See if its enabled in this board.
 		if (empty($modSettings['solvetopic_board_' . $board]))
 		{
-			fatal_lang_error('solvetopic_not_enabled', false);
+			throw new Elk_Exception('solvetopic_not_enabled', false);
 		}
 
 		// You need a topic to solve.
 		if (empty($topic))
 		{
-			fatal_lang_error('not_a_topic', false);
+			throw new Elk_Exception('not_a_topic', false);
 		}
 
 		checkSession('get');
@@ -239,9 +239,9 @@ class SolveTopic_Controller extends Action_Controller
 						'class' => 'centertext',
 					),
 					'data' => array(
-						'function' => create_function('$entry', '
-							return \'<input type="checkbox" class="input_check" name="delete[]" value="\' . $entry[\'id\'] . \'"\' . ($entry[\'editable\'] ? \'\' : \' disabled="disabled"\') . \' />\';
-						'),
+						'function' => function($entry) {
+							return '<input type="checkbox" class="input_check" name="delete[]" value="' . $entry['id'] . '"' . ($entry['editable'] ? '' : ' disabled="disabled"') . ' />';
+						},
 						'class' => 'centertext',
 					),
 				),

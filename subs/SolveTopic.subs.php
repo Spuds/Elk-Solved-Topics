@@ -2,7 +2,7 @@
 
 /**
  * @name      SolveTopic
- * @copyright ElkArte Forum contributors
+ * @copyright 2014-2021 ElkArte Forum contributors
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
  * This software is a derived product, based on:
@@ -10,7 +10,7 @@
  * TopicSolved 1.1.1
  * Copyright 2006-2008 Blue Dream (http://www.simpleportal.net)
  *
- * @version 1.0.1
+ * @version 1.0.2
  *
  */
 
@@ -69,7 +69,7 @@ function markSolveTopic($topic, $firstmsg, $solved)
 		WHERE id_msg = {int:message}',
 		array(
 			'message' => $firstmsg,
-			'icon' => empty($solved) ? 'solved' : 'exclamation',
+			'icon' => empty($solved) ? 'check' : 'exclamation',
 		)
 	);
 }
