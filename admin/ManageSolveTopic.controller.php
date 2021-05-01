@@ -10,14 +10,9 @@
  * TopicSolved 1.1.1
  * Copyright 2006-2008 Blue Dream (http://www.simpleportal.net)
  *
- * @version 1.0
+ * @version 1.0.1
  *
  */
-
-if (!defined('ELK'))
-{
-	die('No access...');
-}
 
 /**
  * Topic Solved administration controller.
@@ -122,14 +117,12 @@ class ManageSolveTopic_Controller extends Action_Controller
 
 		loadTemplate('SolveTopic');
 
-		$config_vars = array(
+		return array(
 			array('check', 'enable_solved_log', 'disabled' => !in_array('ml', $context['admin_features'])),
 			array('check', 'solvetopic_display_notice'),
 			array('title', 'solvetopic_board_desc'),
 			array('callback', 'selectboards'),
 		);
-
-		return $config_vars;
 	}
 
 	/**

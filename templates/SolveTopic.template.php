@@ -10,14 +10,9 @@
  * TopicSolved 1.1.1
  * Copyright 2006-2008 Blue Dream (http://www.simpleportal.net)
  *
- * @version 1.0
+ * @version 1.0.1
  *
  */
-
-if (!defined('ELK'))
-{
-	die('No access...');
-}
 
 /**
  * Show a header that the topic is solved

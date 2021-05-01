@@ -23,7 +23,7 @@ if (!defined('ELK'))
  * Addon Hook, integrate_sa_modify_modifications, Called from AddonSettings_Controller
  * Adds new subActions to the available addon array
  *
- * @param mixed[] $subActions
+ * @param array $subActions
  */
 function imm_solvetopic(&$subActions)
 {
@@ -39,8 +39,8 @@ function imm_solvetopic(&$subActions)
  * Admin Hook, integrate_admin_areas, called from Admin.php
  * Used to add/modify admin menu areas
  *
- * @param mixed[] $admin_areas
- * @param mixed[] $menuOptions
+ * @param array $admin_areas
+ * @param array $menuOptions
  */
 function iaa_solvetopic(&$admin_areas, &$menuOptions)
 {
@@ -66,11 +66,11 @@ function iaa_solvetopic(&$admin_areas, &$menuOptions)
  * Permissions hook, integrate_load_permissions, called from ManagePermissions.subs.php
  * Used to add new permisssions
  *
- * @param mixed[] $permissionGroups
- * @param mixed[] $permissionList
- * @param mixed[] $leftPermissionGroups
- * @param mixed[] $hiddenPermissions
- * @param mixed[] $relabelPermissions
+ * @param array $permissionGroups
+ * @param array $permissionList
+ * @param array $leftPermissionGroups
+ * @param array $hiddenPermissions
+ * @param array $relabelPermissions
  */
 function ilp_solvetopic(&$permissionGroups, &$permissionList, &$leftPermissionGroups, &$hiddenPermissions, &$relabelPermissions)
 {
@@ -127,7 +127,7 @@ function itq_solvetopic(&$topic_selects, &$topic_tables, &$topic_parameters)
  * Topic display hook, integrate_display_topic called from Display.controller
  * Used to gain access to the topicquery results
  *
- * @param mixed[] $topicinfo
+ * @param array $topicinfo
  */
 function idt_solvetopic($topicinfo)
 {
@@ -151,8 +151,8 @@ function ilt_solvetopic(&$log_types)
  * Add moderation menu items, integrate_moderation_areas called from ModerationCenter Controller
  * Provide access from the moderation centrer to the solved topic log
  *
- * @param mixed[] $moderation_areas
- * @param mixed[] $menuOptions
+ * @param array $moderation_areas
+ * @param array $menuOptions
  */
 function ima_solvetopic(&$moderation_areas, &$menuOptions)
 {
@@ -184,7 +184,7 @@ function ima_solvetopic(&$moderation_areas, &$menuOptions)
  * Can also add additional items to $context ;)
  *
  * @param string $sort_column
- * @param mixed[] $indexOptions
+ * @param array $indexOptions
  */
 function imt_solvetopic(&$sort_column, &$indexOptions)
 {
@@ -198,7 +198,7 @@ function imt_solvetopic(&$sort_column, &$indexOptions)
  * Message icon hook, integrate_messageindex_icons, called from MessageIndex.subs.php
  * Used to add additional known message index icons
  *
- * @param mixed[] $stable_icons
+ * @param array $stable_icons
  */
 function imi_solvetopic(&$stable_icons)
 {
