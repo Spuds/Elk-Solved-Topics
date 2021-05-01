@@ -49,6 +49,7 @@ function iaa_solvetopic(&$admin_areas, &$menuOptions)
 	loadlanguage('SolveTopic');
 
 	// Add the solved log menu choice under admin logs
+	$solvelog = array();
 	$solvelog['solvelog'] = array(
 		$txt['modlog_solve_log'],
 		'moderate_forum',
@@ -96,7 +97,7 @@ function idb_solvetopic()
 	if (!empty($modSettings['solvetopic_display_notice']) && $context['is_solved'] && $context['board_solve'])
 	{
 		loadTemplate('SolveTopic');
-		$template_layers = Template_Layers::getInstance();
+		$template_layers = Template_Layers::instance();
 		$template_layers->add('solvetopic_header');
 	}
 
