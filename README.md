@@ -1,10 +1,10 @@
 ## Solve Topic
 
 ### License
-This Elkarte addon is released under a [BSD-3-Clause](http://opensource.org/licenses/BSD-3-Clause) license.
+This Elkarte addon is released under a [BSD-3-Clause](https://opensource.org/licenses/BSD-3-Clause) license.
 
 ### Introduction
-This [ElkArte](http://www.elkarte.net "ElkArte") addon adds a new capability, allowing one to mark a topic solved or unsolved.
+This [ElkArte](https://www.elkarte.net "ElkArte") addon adds a new capability, allowing one to mark a topic solved or unsolved.
 
 ### Features
  * You can select the boards for this feature to be active.

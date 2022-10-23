@@ -1,7 +1,7 @@
 [center][size=16pt][b]Solve Topic[/b][/size][/center]
 [hr]
 [color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
-This Elkarte addon is released under a [url=http://opensource.org/licenses/BSD-3-Clause]BSD-3-Clause[/url] license
+This Elkarte addon is released under a [url=https://opensource.org/licenses/BSD-3-Clause]BSD-3-Clause[/url] license
 
 [color=blue][b][size=12pt][u]Introduction[/u][/size][/b][/color]
 This addon adds a new capability, allowing one to mark a topic solved or unsolved, useful for todo or help boards.

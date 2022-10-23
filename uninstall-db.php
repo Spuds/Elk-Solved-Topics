@@ -3,8 +3,8 @@
 /**
  * Full removal of the SolveTopic Addon, cleans up its DB entries
  *
- * @name      ElkArte Forum
- * @copyright ElkArte Forum contributors
+ * @name      SolveTopic
+ * @copyright 2014-2022 ElkArte Forum contributors
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
  * This software is a derived product, based on:
@@ -16,9 +16,9 @@
  *
  */
 
-if (file_exists(dirname(__FILE__) . '/SSI.php') && !defined('ELK'))
+if (file_exists(__DIR__ . '/SSI.php') && !defined('ELK'))
 {
-	require_once(dirname(__FILE__) . '/SSI.php');
+	require_once(__DIR__ . '/SSI.php');
 }
 elseif (!defined('ELK'))
 {
@@ -77,7 +77,7 @@ $db->query('', '
 
 if (ELK === 'SSI')
 {
-	if (in_array('solved', $installed))
+	if (in_array('solved', $installed, true))
 	{
 		echo 'All topic-solved activity has been removed!';
 	}

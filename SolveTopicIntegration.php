@@ -2,7 +2,7 @@
 
 /**
  * @name      SolveTopic
- * @copyright ElkArte Forum contributors
+ * @copyright 2014-2022 ElkArte Forum contributors
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
  * This software is a derived product, based on:
@@ -10,14 +10,9 @@
  * TopicSolved 1.1.1
  * Copyright 2006-2008 Blue Dream (http://www.simpleportal.net)
  *
- * @version 1.0
+ * @version 1.0.3
  *
  */
-
-if (!defined('ELK'))
-{
-	die('No access...');
-}
 
 /**
  * Addon Hook, integrate_sa_modify_modifications, Called from AddonSettings_Controller
@@ -65,7 +60,7 @@ function iaa_solvetopic(&$admin_areas, &$menuOptions)
 
 /**
  * Permissions hook, integrate_load_permissions, called from ManagePermissions.subs.php
- * Used to add new permisssions
+ * Used to add new permissions
  *
  * @param array $permissionGroups
  * @param array $permissionList
@@ -150,7 +145,7 @@ function ilt_solvetopic(&$log_types)
 
 /**
  * Add moderation menu items, integrate_moderation_areas called from ModerationCenter Controller
- * Provide access from the moderation centrer to the solved topic log
+ * Provide access from the moderation center to the solved topic log
  *
  * @param array $moderation_areas
  * @param array $menuOptions
@@ -168,7 +163,7 @@ function ima_solvetopic(&$moderation_areas, &$menuOptions)
 		'solvedlog' => array(
 			'icon' => 'transparent.png',
 			'class' => 'admin_img_logs',
-			'enabled' => !empty($modSettings['enable_solved_log']) && in_array('ml', $context['admin_features']),
+			'enabled' => !empty($modSettings['enable_solved_log']) && in_array('ml', $context['admin_features'], true),
 			'label' => $txt['modlog_solve_log'],
 			'file' => 'SolveTopic.controller.php',
 			'controller' => 'SolveTopic_Controller',

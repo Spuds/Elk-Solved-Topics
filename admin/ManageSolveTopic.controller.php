@@ -2,7 +2,7 @@
 
 /**
  * @name      SolveTopic
- * @copyright 2014-2021 ElkArte Forum contributors
+ * @copyright 2014-2022 ElkArte Forum contributors
  * @license   BSD http://opensource.org/licenses/BSD-3-Clause
  *
  * This software is a derived product, based on:
@@ -10,7 +10,7 @@
  * TopicSolved 1.1.1
  * Copyright 2006-2008 Blue Dream (http://www.simpleportal.net)
  *
- * @version 1.0.2
+ * @version 1.0.3
  *
  */
 
@@ -96,7 +96,7 @@ class ManageSolveTopic_Controller extends Action_Controller
 		loadTemplate('SolveTopic');
 
 		return array(
-			array('check', 'enable_solved_log', 'disabled' => !in_array('ml', $context['admin_features'])),
+			array('check', 'enable_solved_log', 'disabled' => !in_array('ml', $context['admin_features'], true)),
 			array('check', 'solvetopic_display_notice'),
 			array('title', 'solvetopic_board_desc'),
 			array('callback', 'selectboards'),
