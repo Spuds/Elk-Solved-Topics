@@ -10,7 +10,7 @@
  * TopicSolved 1.1.1
  * Copyright 2006-2008 Blue Dream (http://www.simpleportal.net)
  *
- * @version 1.0.3
+ * @version 1.0.4
  *
  */
 
@@ -199,4 +199,14 @@ function imt_solvetopic(&$sort_column, &$indexOptions)
 function imi_solvetopic(&$stable_icons)
 {
 	$stable_icons[] = 'solved';
+	$stable_icons[] = 'check';
+
+	// Just in case another mod added these
+	$stable_icons = array_unique($stable_icons);
+
+	// Long ago we used solved vs check icon, so we add back it here
+	theme()->addCSSRules("
+	.i-solved::before {
+		content: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234CAF50' viewBox='0 0 32 32'%3E%3Cpath d='M27 4L12 19l-7-7-5 5 12 12L32 9z'/%3E%3C/svg%3E\");
+	}");
 }
